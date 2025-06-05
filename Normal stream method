@@ -1,0 +1,129 @@
+🔹 1. Creation Methods
+
+Stream.of(T...)
+
+Stream.ofNullable(T)
+
+Arrays.stream(T[])
+
+Collection.stream()
+
+Collection.parallelStream()
+
+Stream.builder()
+
+Stream.generate(Supplier<T>)
+
+Stream.iterate(T seed, UnaryOperator<T>)
+
+Stream.concat(Stream<T>, Stream<T>)
+
+🔹 2. Intermediate Operations (transform the stream)
+
+Filtering
+
+filter(Predicate<T>)
+
+distinct()
+
+limit(long n)
+
+skip(long n)
+
+takeWhile(Predicate<T>) (Java 9+)
+
+dropWhile(Predicate<T>) (Java 9+)
+
+🔄 Mapping
+
+map(Function<T, R>)
+
+mapToInt(ToIntFunction<T>)
+
+mapToLong(ToLongFunction<T>)
+
+mapToDouble(ToDoubleFunction<T>)
+
+flatMap(Function<T, Stream<R>>)
+
+flatMapToInt/Long/Double(...)
+
+📊 Sorting
+
+sorted()
+
+sorted(Comparator<T>)
+
+🔃 Peeking
+
+peek(Consumer<T>)
+
+🔹 3. Terminal Operations (end of stream)
+
+Collection
+
+collect(Collector)
+
+toList() (Java 16+)
+
+Collectors.toList()/toSet()/toMap()
+
+Collectors.toUnmodifiableList()/Set()/Map() (Java 10+)
+
+✅ Matching
+
+anyMatch(Predicate<T>)
+
+allMatch(Predicate<T>)
+
+noneMatch(Predicate<T>)
+
+🔍 Finding
+
+findFirst()
+
+findAny()
+
+🔢 Counting
+
+count()
+
+➕ Reduction
+
+reduce(BinaryOperator<T>)
+
+reduce(T identity, BinaryOperator<T>)
+
+reduce(U identity, BiFunction<U, T, U>, BinaryOperator<U>)
+
+⛏ Min/Max
+
+min(Comparator<T>)
+
+max(Comparator<T>)
+
+⚙ For-each
+
+forEach(Consumer<T>)
+
+forEachOrdered(Consumer<T>)
+
+🔹 4. Specialized Streams
+
+IntStream
+
+LongStream
+
+DoubleStream
+
+They have similar methods but return primitive results (e.g., sum(), average()).
+
+🔹 5. Conversion
+
+toArray()
+
+toArray(IntFunction<A[]>)
+
+boxed() (for primitive streams)
+
+mapToObj(...)
